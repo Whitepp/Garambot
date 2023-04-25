@@ -94,7 +94,7 @@ async def on_message(message):
             return
 
         if content == "문의방":
-            embed = discord.Embed(title="문의방", description="총 인원 4명일 때 입장가능합니다. 5명 이상이면 대기! \n https://open.kakao.com/o/gOlu408e",
+            embed = discord.Embed(title="문의방", description="총 인원 5명일 때 입장가능합니다. 5명 이상이면 대기! \n https://open.kakao.com/o/gOlu408e",
                                   color=0xE86222)
             await channel.send(embed=embed)
             return
