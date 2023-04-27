@@ -80,7 +80,7 @@ async def on_message(message):
             return
 
         if content == "명령어":
-            embed = discord.Embed(title="명령어 모음", description="가람봇 문의사항은 WANTED에게 전달해주세요", color=12745742)
+            embed = discord.Embed(title="명령어 모음", description="가람봇 문의사항은 DITTO#31435에게 전달해주세요", color=12745742)
             embed.add_field(name="LINK for Everything", value="문의방, 수다방, 공지방, 네이버카페, 신입안내", inline=False)
             embed.add_field(name="운영진 및 스탭 목록", value="운영진", inline=False)
             embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 공수추천, 팀편성, 한줄소개설문지", inline=False)
@@ -88,7 +88,7 @@ async def on_message(message):
             return
 
         if content == "운영진":
-            staff_list = ':pen_ballpoint: 가람#31413\n:construction_worker: 라루이라#3280\n:construction_worker: Bella#13702\n:construction_worker: WANTED#31682'
+            staff_list = ':pen_ballpoint: 가람#31413\n:construction_worker: 라루이라#3280\n:construction_worker: Bella#13702\n:construction_worker: DITTO#31435'
             embed = discord.Embed(title="운영진 리스트입니다. 친구추가 부탁드려요", description=staff_list, color=3447003)
             await channel.send(embed=embed)
             return
