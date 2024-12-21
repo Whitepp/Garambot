@@ -39,7 +39,7 @@ async def on_ready():
 
 async def get_spreadsheet(ws_name):
     #creds = ServiceAccountCredentials.from_json_keyfile_name("google-credentials.json", scope)
-    credentials = ServiceAccountCredentials.from_json_keyfile_dict(server/google-credentials.json, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(google-credentials.json, scope)
     auth = gspread.authorize(creds)
 
     if creds.access_token_expired:
