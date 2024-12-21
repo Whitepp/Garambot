@@ -238,10 +238,10 @@ async def on_message(message):
 
         embed = discord.Embed(title="한줄소개", description=description, color=3447003)
 
-        if link is not '':
+        if link != '':
             embed = discord.Embed(title="한줄소개", url=link, description=description, color=3447003)
 
-        if thumbnaillink is not '':
+        if thumbnaillink != '':
             embed.set_thumbnail(url=thumbnaillink)
 
         embed.add_field(name='모스트 1', value=most1, inline=True)
