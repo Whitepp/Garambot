@@ -88,7 +88,7 @@ async def on_message(message):
 
         if content == "카톡방":
             embed = discord.Embed(title="막역지우 클랜 톡방",
-                                  description="https://invite.kakao.com/tc/h17zJMGC30",
+                                  description="https://open.kakao.com/o/gdb82k6g",
                                   color=0xE86222)
             await channel.send(embed=embed)
             return
