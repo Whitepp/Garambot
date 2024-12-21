@@ -38,7 +38,7 @@ async def on_ready():
     await client.change_presence(status=discord.Status.online, activity=game)
 
 async def get_spreadsheet(ws_name):
-    creds = ServiceAccountCredentials.from_json_keyfile_name("garam-382904-9603060e0307.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("HarangTest-130d0649c09f.json", scope)
     auth = gspread.authorize(creds)
 
     if creds.access_token_expired:
