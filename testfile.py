@@ -13,7 +13,7 @@ client = commands.Bot(command_prefix=">>", intents=discord.Intents.all())
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-url = "https://docs.google.com/spreadsheets/d/1G288YQemotpgNzet_HchHUaa8m7md1YSH38wldmCi0k/edit#gid=0"
+url = "https://docs.google.com/spreadsheets/d/1WI7W0KjLaebqQUuLpf7BqhPYEKnLa2ppNLEiXasOce4/edit#gid=0"
 
 current_time = lambda: datetime.datetime.utcnow() + datetime.timedelta(hours=9)
 
