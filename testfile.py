@@ -79,6 +79,14 @@ async def on_message(message):
             await channel.send(embed=embed)
             return
 
+
+        if content == "한줄소개":
+            spreadsheet = await get_spreadsheet('responses1')
+            data = spreadsheet.col_values(3)
+            data[0] = "한줄소개 명령어 리스트입니다!"
+            await channel.send(data)
+            return
+
         if content == "명령어":
             embed = discord.Embed(title="명령어 모음", description="가람봇 문의사항은 DITTO#31435에게 전달해주세요", color=12745742)
             embed.add_field(name="LINK for Everything", value="문의방, 수다방, 공지방, 네이버카페, 신입안내", inline=False)
@@ -154,7 +162,6 @@ async def on_message(message):
 
         if content == "맵추천":
             # 파리 호라이즌
-            maps = "네팔 리장타워 부산 오아시스 일리오스 66번국도 감시기지:지브롤터 도라도 리알토 쓰레기촌 하바나 눔바니 블리자드월드 아이헨발데 왕의길 할리우드 파라이수 서킷로얄 뉴퀸스트리트 콜로세오 이스페란사 미드타운 샴발라수도원 남극반도 호라이즌"
             mapchoice = maps.split(" ")
             mapnumber = random.randint(1, len(mapchoice))
             mapresult = mapchoice[mapnumber - 1]
@@ -170,6 +177,44 @@ async def on_message(message):
             return
 
         spreadsheet = await get_spreadsheet('responses1')
+        # 내전 팀편성
+        if content.startswith("내전팀편성"):
+            team1List = []
+            team2List = []
+
+            if len(content.split(" ")) != 13 and len(content.split(" ")) != 15:
+                    data = "잘못 입력한 부분이 있습니다. 다시 입력해주세요."
+                    await channel.send(data)
+                    return
+            if len(content.split(" ")) == 13:
+                for idx in range(1, 13):
+                    if idx < 7:
+                        team1List.append(content.split(" ")[idx])
+                    else:
+                        team2List.append(content.split(" ")[idx])
+
+                embed = discord.Embed(title="오늘의 내전 팀편성", description="해당 명령어 문의사항은 Bewhy에게 전달해주세요", color=0xFF5733)
+                embed.add_field(name="1팀", value="[탱커] "+team1List[0]+"\t"+team1List[1]+"\n[딜러] "+team1List[2]+"\t"+team1List[3]+"\n[힐러] "+team1List[4]+"\t"+team1List[5], inline=False)
+                embed.add_field(name="2팀", value="[탱커] "+team2List[0]+"\t"+team2List[1]+"\n[딜러] "+team2List[2]+"\t"+team2List[3]+"\n[힐러] "+team2List[4]+"\t"+team2List[5], inline=False)
+                await channel.send(embed=embed)
+                return
+
+            if len(content.split(" ")) == 15:
+                for idx in range(3, 15):
+                    if idx < 9:
+                        team1List.append(content.split(" ")[idx])
+                    else:
+                        team2List.append(content.split(" ")[idx])
+
+                embed = discord.Embed(title="오늘의 내전 팀편성", description="해당 명령어 문의사항은 Bewhy에게 전달해주세요", color=0xFF5733)
+                embed.add_field(name=content.split(" ")[1], value="[탱커] "+team1List[0]+"\t"+team1List[1]+"\n[딜러] "+team1List[2]+"\t"+team1List[3]+"\n[힐러] "+team1List[4]+"\t"+team1List[5], inline=False)
+                embed.add_field(name=content.split(" ")[2], value="[탱커] "+team2List[0]+"\t"+team2List[1]+"\n[딜러] "+team2List[2]+"\t"+team2List[3]+"\n[힐러] "+team2List[4]+"\t"+team2List[5], inline=False)
+                await channel.send(embed=embed)
+                return
+
+        spreadsheet = await get_spreadsheet('responses1')
+        roles = spreadsheet.col_values(6)
+        battletags = spreadsheet.col_values(2)
         nickname = spreadsheet.col_values(3)
 
         try:
@@ -208,6 +253,6 @@ async def on_message(message):
 
 
 
+
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
-
