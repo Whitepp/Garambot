@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 import asyncio
-import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import datetime
 import random
@@ -9,11 +8,6 @@ import os
 from discord.utils import get
 
 client = commands.Bot(command_prefix=">>", intents=discord.Intents.all())
-
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-
-url = "https://docs.google.com/spreadsheets/d/1uJ8H_VVMpZx454iz-sF5OUxJ0SWu4JGfRqWaaRfMKsU/edit?resourcekey=&gid=1996559267#gid=1996559267"
 
 current_time = lambda: datetime.datetime.utcnow() + datetime.timedelta(hours=9)
 
@@ -36,21 +30,7 @@ async def on_ready():
     print(client.user.id)
     print("---------------")
     await client.change_presence(status=discord.Status.online, activity=game)
-
-async def get_spreadsheet(ws_name):
-    creds = ServiceAccountCredentials.from_json_keyfile_name("google-credentials.json", scope)
-    #credentials = ServiceAccountCredentials.from_json_keyfile_dict(google-credentials.json, scope)
-    auth = gspread.authorize(creds)
-
-    if creds.access_token_expired:
-        auth.login()
-
-    try:
-        worksheet = auth.open_by_url(url).worksheet(ws_name)
-    except gspread.exceptions.APIError:
-        print("API Error")
-        return
-    return worksheet
+         
 
 @client.event
 async def on_message(message):
@@ -169,44 +149,6 @@ async def on_message(message):
             result = choice[number - 1]
             await message.channel.send("나는요 " + result + " 좋은거헐! (짝짝) 오또케!")
             return
-
-        spreadsheet = await get_spreadsheet('responses1')
-        nickname = spreadsheet.col_values(3)
-
-        try:
-            index = nickname.index(content) + 1
-        except gspread.exceptions.CellNotFound:
-            return
-        except gspread.exceptions.APIError:
-            return
-
-        # mention = spreadsheet.cell(index, 1).value
-        battletag = spreadsheet.cell(index, 2).value
-        link = spreadsheet.cell(index, 4).value
-        description = spreadsheet.cell(index, 5).value
-        thumbnaillink = spreadsheet.cell(index, 6).value
-        most1 = spreadsheet.cell(index, 7).value
-        most2 = spreadsheet.cell(index, 8).value
-        most3 = spreadsheet.cell(index, 9).value
-        batteltags= spreadsheet.cell(index, 10).value
-
-        print(index, battletag, link, description, thumbnaillink, most1, most2, most3)
-
-        embed = discord.Embed(title="한줄소개", description=description, color=3447003)
-
-        if link is not '':
-            embed = discord.Embed(title="한줄소개", url=link, description=description, color=3447003)
-
-        if thumbnaillink is not '':
-            embed.set_thumbnail(url=thumbnaillink)
-
-        embed.add_field(name='모스트 1', value=most1, inline=True)
-        embed.add_field(name='모스트 2', value=most2, inline=True)
-        embed.add_field(name='모스트 3', value=most3, inline=True)
-        embed.add_field(name='부계리스트', value=batteltags, inline=True)
-
-        await channel.send(embed=embed)
-
 
 
 access_token = os.environ["BOT_TOKEN"]
