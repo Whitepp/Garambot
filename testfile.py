@@ -24,8 +24,8 @@ def is_dcstaff(member):
 async def on_ready():
     global Garam
     await client.wait_until_ready()
-    game = discord.Game("즐거운 오버워치")
-    print("login: Garam Main")
+    game = discord.Game("즐거운 발로란트")
+    print("login: MYJW Main")
     print(client.user.name)
     print(client.user.id)
     print("---------------")
@@ -53,61 +53,60 @@ async def on_message(message):
                 "@here 팀편성 해주세요!\n" + "https://tenor.com/view/thinking-think-tap-tapping-spongebob-gif-5837190")
             return
 
-        if content == "가람봇":
-            embed = discord.Embed(title=":robot:가람봇:robot:", description="가람봇 ver1.0 온라인!", color=3066993)
+        if content == "봇":
+            embed = discord.Embed(title=":robot:MYJW bot:robot:", description="ditto!", color=3066993)
             embed.set_thumbnail(
                 url="https://cdn.discordapp.com/attachments/708306592465944591/723914634116988988/3b53af51b6da75d2.png")
             await channel.send(embed=embed)
             return
 
         if content == "명령어":
-            embed = discord.Embed(title="명령어 모음", description="가람봇 문의사항은 DITTO#31435에게 전달해주세요", color=12745742)
-            embed.add_field(name="LINK for Everything", value="문의방, 수다방, 공지방, 네이버카페, 신입안내", inline=False)
+            embed = discord.Embed(title="명령어 모음", description="봇 문의사항은 박디도에게 전달해주세요", color=12745742)
+            embed.add_field(name="LINK for Everything", value="카톡방, 회칙", inline=False)
             embed.add_field(name="운영진 및 스탭 목록", value="운영진", inline=False)
-            embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 공수추천, 팀편성, 한줄소개설문지", inline=False)
+            embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 공수추천, 팀편성", inline=False)
             await channel.send(embed=embed)
             return
 
         if content == "운영진":
-            staff_list = ':pen_ballpoint: 가람#31413\n:construction_worker: 라루이라#3280\n:construction_worker: DITTO#31435\n:construction_worker: 황근출#3391\n:construction_worker: 비상#3132'
-            embed = discord.Embed(title="운영진 리스트입니다. 친구추가 부탁드려요", description=staff_list, color=3447003)
+            staff_list = ':pen_ballpoint: 모토aka뷔\n:construction_worker: 박디도\n:construction_worker: NEXT\n:construction_worker: NEXT\n:construction_worker: NEXT'
+            embed = discord.Embed(title="운영진 리스트입니다. 인게임 친구추가 부탁드려요", description=staff_list, color=3447003)
             await channel.send(embed=embed)
             return
 
-        if content == "문의방":
-            embed = discord.Embed(title="문의방", description="총 인원 6명일 때 입장가능합니다. 7명 이상이면 대기! \n https://open.kakao.com/o/gOlu408e",
+        #if content == "건의및신고":
+         #   embed = discord.Embed(title="건의및신고", description="https://discord.com/channels/1318944505977770005/1319700286893195326",
+         #                        color=0xE86222)
+         #   await channel.send(embed=embed)
+         #   return
+
+        if content == "카톡방":
+            embed = discord.Embed(title="카톡방",
+                                  description="https://invite.kakao.com/tc/h17zJMGC30",
                                   color=0xE86222)
             await channel.send(embed=embed)
             return
 
-        if content == "수다방":
-            embed = discord.Embed(title="수다방",
-                                  description="https://open.kakao.com/o/gQ2qa42e",
-                                  color=0xE86222)
+        #if content == "공지방":
+        #    embed = discord.Embed(title="공지방",
+        #                          description="https://open.kakao.com/o/gN6wLj4e",
+        #                          color=0xE86222)
+        #    await channel.send(embed=embed)
+        #    return
+
+        #if content == "네이버카페":
+        #    await message.channel.send("https://cafe.naver.com/orangec7sck")
+        #    return
+
+        if content == "회칙":
+            embed = discord.Embed(title="회칙 링크", description="신입클랜원분들은 해당 사항 한 번씩 읽어주세요!!", color=0xFF5733)
+            embed.add_field(name="디스코드 안내 링크", value="https://discord.com/channels/1318944505977770005/1318944505977770008", inline=False)
             await channel.send(embed=embed)
             return
 
-        if content == "공지방":
-            embed = discord.Embed(title="공지방",
-                                  description="https://open.kakao.com/o/gN6wLj4e",
-                                  color=0xE86222)
-            await channel.send(embed=embed)
-            return
-
-        if content == "네이버카페":
-            await message.channel.send("https://cafe.naver.com/orangec7sck")
-            return
-
-        if content == "신입안내":
-            embed = discord.Embed(title="신입클랜원 안내 링크", description="신입클랜원분들은 해당 사항 한 번씩 읽어주세요!!", color=0xFF5733)
-            embed.add_field(name="디스코드 안내 링크", value="https://cafe.naver.com/orangec7sck", inline=False)
-            embed.add_field(name="가람 신입클랜원 안내 링크", value="https://cafe.naver.com/orangec7sck", inline=False)
-            await channel.send(embed=embed)
-            return
-
-        if content == "한줄소개설문지":
-            await message.channel.send("https://forms.gle/We9udWooJ1C9q9S5A")
-            return
+        #if content == "한줄소개설문지":
+        #    await message.channel.send("https://forms.gle/We9udWooJ1C9q9S5A")
+        #    return
 
         if content == "주사위":
             dice = "0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 777"
@@ -134,12 +133,11 @@ async def on_message(message):
             return
 
         if content == "맵추천":
-            # 파리 호라이즌
-            maps = "네팔 리장타워 부산 오아시스 일리오스 66번국도 감시기지:지브롤터 도라도 리알토 쓰레기촌 하바나 눔바니 블리자드월드 아이헨발데 왕의길 할리우드 파라이수 서킷로얄 뉴퀸스트리트 콜로세오 이스페란사 미드타운 샴발라수도원 남극반도 호라이즌"
+            maps = "선셋 로터스 펄 프랙처 브리즈 아이스박스 바인드 헤이븐 스플릿 어센트"
             mapchoice = maps.split(" ")
             mapnumber = random.randint(1, len(mapchoice))
             mapresult = mapchoice[mapnumber - 1]
-            await message.channel.send("가람봇이 추천드리는 오늘의 맵은....!  **||" + mapresult + "||**")
+            await message.channel.send("디도가 추천드리는 오늘의 맵은....!  **||" + mapresult + "||**")
             return
 
         if content == "공수추천":
