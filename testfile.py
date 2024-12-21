@@ -62,7 +62,7 @@ async def on_message(message):
 
         if content == "명령어":
             embed = discord.Embed(title="명령어 모음", description="봇 문의사항은 박디도에게 전달해주세요", color=12745742)
-            embed.add_field(name="LINK for Everything", value="카톡방, 회칙", inline=False)
+            embed.add_field(name="LINK for Everything", value="카톡방, 회칙, 건의, 신고", inline=False)
             embed.add_field(name="운영진 및 스탭 목록", value="운영진", inline=False)
             embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 공수추천, 팀편성", inline=False)
             await channel.send(embed=embed)
@@ -74,14 +74,20 @@ async def on_message(message):
             await channel.send(embed=embed)
             return
 
-        #if content == "건의및신고":
-         #   embed = discord.Embed(title="건의및신고", description="https://discord.com/channels/1318944505977770005/1319700286893195326",
-         #                        color=0xE86222)
-         #   await channel.send(embed=embed)
-         #   return
+        if content == "건의":
+            embed = discord.Embed(title="건의및신고", description="https://discord.com/channels/1318944505977770005/1319700286893195326",
+                                 color=0xE86222)
+            await channel.send(embed=embed)
+            return
+
+        if content == "신고":
+            embed = discord.Embed(title="건의및신고", description="https://discord.com/channels/1318944505977770005/1319700286893195326",
+                                 color=0xE86222)
+            await channel.send(embed=embed)
+            return
 
         if content == "카톡방":
-            embed = discord.Embed(title="카톡방",
+            embed = discord.Embed(title="막역지우 클랜 톡방",
                                   description="https://invite.kakao.com/tc/h17zJMGC30",
                                   color=0xE86222)
             await channel.send(embed=embed)
@@ -100,7 +106,7 @@ async def on_message(message):
 
         if content == "회칙":
             embed = discord.Embed(title="회칙 링크", description="신입클랜원분들은 해당 사항 한 번씩 읽어주세요!!", color=0xFF5733)
-            embed.add_field(name="디스코드 안내 링크", value="https://discord.com/channels/1318944505977770005/1318944505977770008", inline=False)
+            embed.add_field(name="디스코드 링크", value="https://discord.com/channels/1318944505977770005/1318944505977770008", inline=False)
             await channel.send(embed=embed)
             return
 
