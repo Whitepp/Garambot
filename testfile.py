@@ -69,7 +69,7 @@ async def on_message(message):
             return
 
         if content == "운영진":
-            staff_list = ':pen_ballpoint: 모토aka뷔\n:construction_worker: 박디도\n:construction_worker: NEXT\n:construction_worker: NEXT\n:construction_worker: NEXT'
+            staff_list = ':pen_ballpoint: ahxh\n:construction_worker: ditto\n:construction_worker: Miix\n:construction_worker: Sultan\n:construction_worker: 갈고라스'
             embed = discord.Embed(title="운영진 리스트입니다. 인게임 친구추가 부탁드려요", description=staff_list, color=3447003)
             await channel.send(embed=embed)
             return
