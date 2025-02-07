@@ -59,9 +59,18 @@ async def on_message(message):
             member_boy_list = get_role_users(1318944505977770005,1318958712169300121)
             member_girl_list = get_role_users(1318944505977770005,1318958629918871582)
             tmember_list = get_role_users(1318944505977770005,1321849829491609691)
-
             
-            await channel.send(staff_list, member_boy_list, member_girl_list, tmember_list)
+
+            print(staff_list)
+            print(member_boy_list)
+            print(member_girl_list)
+            print(tmember_list)
+
+            result1 = "\n".join(staff_list)
+            pprint(result1)
+
+            all_member_list = []
+            await channel.send(all_member_list)
             return
             
         if content == "팀편성":
