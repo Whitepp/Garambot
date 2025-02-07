@@ -54,7 +54,7 @@ async def on_message(message):
         if content == '':
             return
 
-        if content == "테스트":
+        if content == "로스터":
             staff_list = get_role_users(1318944505977770005,1318958519722049566)
             member_boy_list = get_role_users(1318944505977770005,1318958712169300121)
             member_girl_list = get_role_users(1318944505977770005,1318958629918871582)
