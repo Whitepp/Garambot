@@ -34,14 +34,8 @@ def is_dcstaff(member):
 def get_role_users(g_id: int, r_id: int):
     g = client.get_guild(g_id)
     r = discord.utils.get(g.roles, id=r_id)
-
-    print(g)
-    print(r)
     
-    names = [m.name for m in r.members]
-
-
-    print(names)
+    names = [m.nick for m in r.members]
     return names
 
 @client.event
