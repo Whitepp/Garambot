@@ -59,7 +59,7 @@ async def on_message(message):
             return
 
         if content == "테스트":
-            mlist = get_role_users()
+            mlist = get_role_users(1318944505977770005)
             await channel.send(mlist)
             return
             
