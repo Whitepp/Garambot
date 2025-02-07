@@ -65,12 +65,14 @@ async def on_message(message):
             print(member_boy_list)
             print(member_girl_list)
             print(tmember_list)
-
+            
+            title = "MYJW  Clan Lineup"
+            staff_title = "STAFF"
             result1 = "\n".join(staff_list)
-            print(result1)
+            print(title + staff_title + result1)
 
             all_member_list = []
-            await channel.send(all_member_list)
+            await channel.send(title + staff_title + result1)
             return
             
         if content == "팀편성":
