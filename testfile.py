@@ -60,7 +60,7 @@ async def on_message(message):
             member_girl_list = get_role_users(1318944505977770005,1318958629918871582)
             tmember_list = get_role_users(1318944505977770005,1321849829491609691)
 
-            title = "#MYJW  Clan Lineup"
+            title = "# MYJW  Clan Lineup"
             staff_title = "__***Admin***__"
             member_title = "__***Members***__"
             tmember_title = "__***Test Members***__"
@@ -70,7 +70,7 @@ async def on_message(message):
             girls = "\n".join(member_girl_list)
             tmembers = "\n".join(tmember_list)
 
-            await channel.send("\n" + title + "\n\n"+ staff_title + "\n" + staffs + "\n\n" + member_title + "\n" + boys + girls + "\n\n" + tmember_title + "\n" + tmembers)
+            await channel.send("\n" + title + "\n\n"+ staff_title + "\n" + staffs + "\n\n" + member_title + "\n" + boys + "\n" + girls + "\n\n" + tmember_title + "\n" + tmembers)
             return
             
         if content == "팀편성":
