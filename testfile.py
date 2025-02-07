@@ -59,20 +59,16 @@ async def on_message(message):
             member_boy_list = get_role_users(1318944505977770005,1318958712169300121)
             member_girl_list = get_role_users(1318944505977770005,1318958629918871582)
             tmember_list = get_role_users(1318944505977770005,1321849829491609691)
-            print(member_boy_list)
+
             title = "MYJW  Clan Lineup"
-            staff_title = "Admin"
-            member_title = "Member"
-            tmember_title = "Test Member"
+            staff_title = "__***Admin__***"
+            member_title = "__***Member__***"
+            tmember_title = "__***Test Member__***"
             
             staffs = "\n".join(staff_list)
             boys = "\n".join(member_boy_list)
             girls = "\n".join(member_girl_list)
             tmembers = "\n".join(tmember_list)
-            
-            print(boys)
-            print(girls)
-            print(tmembers)
 
             await channel.send(title + "\n\n"+ staff_title + "\n" + staffs + "\n\n" + member_title + "\n" + boys + girls + "\n\n" + tmember_title + "\n" + tmembers)
             return
