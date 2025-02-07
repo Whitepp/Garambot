@@ -19,17 +19,30 @@ def is_moderator(member):
 def is_dcstaff(member):
     return "스텝-DC" in map(lambda x: x.name, member.roles)
 
-def get_role_users(guild_id: int):
-    g = client.get_guild(guild_id)
+#def get_role_users(guild_id: int):
+    #g = client.get_guild(guild_id)
 
-    staff_rid = 1318958519722049566
-    staff_nicknames = [m.name for m in staff_rid.members]
+    #staff_rid = 1318958519722049566
+    #staff_nicknames = [m.name for m in staff_rid.members]
     #staff_nicknames = "\n".join([m.id for m in staff_rid.members])
-    print(staff_nicknames)
+    #print(staff_nicknames)
     
     #user_ids = "\n".join([m.id for m in r.members])
     #with open("users.txt", "w") as f:
     #    f.write(user_ids)
+
+def get_role_users(g_id: int, r_id: int):
+    g = bot.get_guild(g_id)
+    r = discord.utils.get(g.roles, id=r_id)
+
+    print(g)
+    print(r)
+    
+    names = [m.name for m in r.members]
+
+
+    print(names)
+    return names
 
 @client.event
 async def on_ready():
@@ -60,7 +73,7 @@ async def on_message(message):
             return
 
         if content == "테스트":
-            mlist = get_role_users(1318944505977770005)
+            mlist = get_role_users(1318944505977770005,1318958519722049566)
             await channel.send(mlist)
             return
             
