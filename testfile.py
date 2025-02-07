@@ -24,6 +24,8 @@ def get_role_users(guild_id: int, role_id: int):
     print(role_id)
     g = client.get_guild(guild_id)
     r = discord.utils.get(g.roles, id=role_id)
+    print(g.roles)
+    print(r)
     user_ids = "\n".join([m.id for m in r.members])
     with open("users.txt", "w") as f:
         f.write(user_ids)
