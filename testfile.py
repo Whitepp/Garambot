@@ -67,7 +67,7 @@ async def on_message(message):
             print(tmember_list)
 
             result1 = "\n".join(staff_list)
-            pprint(result1)
+            print(result1)
 
             all_member_list = []
             await channel.send(all_member_list)
