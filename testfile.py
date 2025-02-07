@@ -23,7 +23,7 @@ def get_role_users(g_id: int, r_id: int):
     g = client.get_guild(g_id)
     r = discord.utils.get(g.roles, id=r_id)
     
-    names = [m.nick for m in r.members]
+    names = [m.display_name for m in r.members]
     return names
 
 @client.event
