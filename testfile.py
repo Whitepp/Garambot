@@ -70,8 +70,8 @@ async def on_message(message):
             girls = "\n".join(member_girl_list)
             tmembers = "\n".join(tmember_list)
             
-            print(boy_members)
-            print(girl_members)
+            print(boys)
+            print(girls)
             print(tmembers)
 
             await channel.send(title + "\n\n"+ staff_title + "\n" + staffs + "\n\n" + member_title + "\n" + boys + girls + "\n\n" + tmember_title + "\n" + tmembers)
