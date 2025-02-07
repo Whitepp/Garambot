@@ -61,9 +61,9 @@ async def on_message(message):
             tmember_list = get_role_users(1318944505977770005,1321849829491609691)
 
             title = "MYJW  Clan Lineup"
-            staff_title = "__***Admin__***"
-            member_title = "__***Member__***"
-            tmember_title = "__***Test Member__***"
+            staff_title = "__***Admin***__"
+            member_title = "__***Membe***__"
+            tmember_title = "__***Test Membe***__"
             
             staffs = "\n".join(staff_list)
             boys = "\n".join(member_boy_list)
