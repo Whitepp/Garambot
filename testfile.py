@@ -19,6 +19,12 @@ def is_moderator(member):
 def is_dcstaff(member):
     return "스텝-DC" in map(lambda x: x.name, member.roles)
 
+def get_role_users(guild_id: int, role_id: int):
+    g = bot.get_guild(guild_id)
+    r = discord.utils.get(g.roles, id=role_id)
+    user_ids = "\n".join([m.id for m in r.members])
+    with open("users.txt", "w") as f:
+        f.write(user_ids)
 
 @client.event
 async def on_ready():
@@ -48,6 +54,11 @@ async def on_message(message):
         if content == '':
             return
 
+        if content == "테스트":
+            mlist = get_role_users(1318944505977770005,1318958519722049566)
+            await channel.send(mlist)
+            return
+            
         if content == "팀편성":
             await message.channel.send(
                 "@here 팀편성 해주세요!\n" + "https://tenor.com/view/thinking-think-tap-tapping-spongebob-gif-5837190")
