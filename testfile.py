@@ -23,12 +23,13 @@ def get_role_users(guild_id: int):
     g = client.get_guild(guild_id)
 
     staff_rid = 1318958519722049566
-    staff_nicknames = []
-    staff_nicknames = "\n".join([m.id for m in staff_rid.members])
+    staff_nicknames = [m.name for m in staff_rid.members]
+    #staff_nicknames = "\n".join([m.id for m in staff_rid.members])
     print(staff_nicknames)
+    
     #user_ids = "\n".join([m.id for m in r.members])
-    with open("users.txt", "w") as f:
-        f.write(user_ids)
+    #with open("users.txt", "w") as f:
+    #    f.write(user_ids)
 
 @client.event
 async def on_ready():
