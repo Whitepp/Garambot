@@ -56,6 +56,7 @@ async def on_message(message):
 
         if content == "로스터":
             staff_list = get_role_users(1318944505977770005,1318958519722049566)
+                
             member_boy_list = get_role_users(1318944505977770005,1318958712169300121)
             member_girl_list = get_role_users(1318944505977770005,1318958629918871582)
             tmember_list = get_role_users(1318944505977770005,1321849829491609691)
@@ -64,6 +65,7 @@ async def on_message(message):
             staff_title = "__***Admin***__"
             member_title = "__***Members***__"
             tmember_title = "__***Test Members***__"
+        
             
             staffs = "\n".join(staff_list)
             boys = "\n".join(member_boy_list)
