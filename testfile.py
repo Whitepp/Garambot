@@ -22,7 +22,7 @@ def is_dcstaff(member):
 def get_role_users(guild_id: int, role_id: int):
     print(guild_id)
     print(role_id)
-    g = bot.get_guild(guild_id)
+    g = client.get_guild(guild_id)
     r = discord.utils.get(g.roles, id=role_id)
     user_ids = "\n".join([m.id for m in r.members])
     with open("users.txt", "w") as f:
