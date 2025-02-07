@@ -32,7 +32,7 @@ def is_dcstaff(member):
     #    f.write(user_ids)
 
 def get_role_users(g_id: int, r_id: int):
-    g = bot.get_guild(g_id)
+    g = client.get_guild(g_id)
     r = discord.utils.get(g.roles, id=r_id)
 
     print(g)
