@@ -170,7 +170,15 @@ async def on_message(message):
             mapchoice = maps.split(" ")
             mapnumber = random.randint(1, len(mapchoice))
             mapresult = mapchoice[mapnumber - 1]
-            await message.channel.send("디도가 추천드리는 오늘의 맵은....!  **||" + mapresult + "||**")
+            await message.channel.send("디도가 추천드리는 오늘의 맵은....!  **||" + mapresult + "||**" + "\n 현재액트 맵추천은 >>액트맵추천")
+            return
+            
+        if content == "액트맵추천":
+            maps = "로터스 펄 프랙처 바인드 헤이븐 스플릿"
+            mapchoice = maps.split(" ")
+            mapnumber = random.randint(1, len(mapchoice))
+            mapresult = mapchoice[mapnumber - 1]
+            await message.channel.send("디도가 추천드리는 오늘의 맵은....!  **||" + mapresult + "||**"+ "\n 전체 맵추천은 >>맵추천")
             return
 
         if content == "공수추천":
