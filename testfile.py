@@ -91,7 +91,7 @@ async def on_message(message):
             embed = discord.Embed(title="명령어 모음", description="봇 문의사항은 박디도에게 전달해주세요", color=12745742)
             embed.add_field(name="LINK for Everything", value="카톡방, 회칙, 건의, 신고", inline=False)
             embed.add_field(name="운영진 및 스탭 목록", value="운영진", inline=False)
-            embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 공수추천, 팀편성", inline=False)
+            embed.add_field(name="Utility", value="로또, 주사위, 맵추천, 액트맵추천, 공수추천, 팀편성", inline=False)
             await channel.send(embed=embed)
             return
 
@@ -120,26 +120,11 @@ async def on_message(message):
             await channel.send(embed=embed)
             return
 
-        #if content == "공지방":
-        #    embed = discord.Embed(title="공지방",
-        #                          description="https://open.kakao.com/o/gN6wLj4e",
-        #                          color=0xE86222)
-        #    await channel.send(embed=embed)
-        #    return
-
-        #if content == "네이버카페":
-        #    await message.channel.send("https://cafe.naver.com/orangec7sck")
-        #    return
-
         if content == "회칙":
             embed = discord.Embed(title="회칙 링크", description="신입클랜원분들은 해당 사항 한 번씩 읽어주세요!!", color=0xFF5733)
             embed.add_field(name="디스코드 링크", value="https://discord.com/channels/1318944505977770005/1318944505977770008", inline=False)
             await channel.send(embed=embed)
             return
-
-        #if content == "한줄소개설문지":
-        #    await message.channel.send("https://forms.gle/We9udWooJ1C9q9S5A")
-        #    return
 
         if content == "주사위":
             dice = "0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 6 6 777"
